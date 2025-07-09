@@ -20,9 +20,15 @@ const venues = [
 
 export default function VenueCards() {
   return (
-    <section className="w-full max-w-6xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-6 font-regular">
-      {venues.map((venue) => (
-        <div key={venue.city} className="bg-white rounded-lg overflow-hidden shadow-md flex flex-col">
+    <section className="w-full max-w-6xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-4 gap-2 font-normal">
+      {/* 1:2:1 ratio using col-span */}
+      {venues.map((venue, idx) => (
+        <div
+          key={venue.city}
+          className={`relative flex flex-col ${
+            idx === 1 ? "md:col-span-2" : "md:col-span-1"
+          }`}
+        >
           <picture>
             <source srcSet={venue.webp} type="image/webp" />
             <img
@@ -31,8 +37,13 @@ export default function VenueCards() {
               className="w-full h-56 object-cover object-center"
             />
           </picture>
-          <div className="p-4 flex-1 flex flex-col justify-end">
-            <span className="block text-gray-700 text-base font-bold italic mt-2 font-bold">{venue.city}</span>
+          {/* City name overlay at bottom, above image, transparent bg */}
+          <div
+            className="absolute left-0 right-0 bottom-0 px-2 py-1 flex items-center bg-black bg-opacity-80"
+          >
+            <span className="text-white text-base font-base italic w-full text-left">
+              {venue.city}
+            </span>
           </div>
         </div>
       ))}

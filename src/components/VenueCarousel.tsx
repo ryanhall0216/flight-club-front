@@ -1,7 +1,6 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import SelectVenueDropdown from "./SelectVenueDropdown";
 
 const galleryValues = [
   "/images/top-image.jpg",
@@ -24,7 +23,7 @@ const sliderSettings = {
 
 export default function VenueCarousel() {
   return (
-    <div className="w-full h-[600px] overflow-hidden shadow-md">
+    <div className="w-full h-[650px] overflow-hidden shadow-md">
       <Slider {...sliderSettings} className="w-full">
         {galleryValues.map((item, index) => (
           <img
@@ -35,7 +34,6 @@ export default function VenueCarousel() {
           />
         ))}
       </Slider>
-      <SelectVenueDropdown />
     </div>
   );
 }
