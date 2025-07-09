@@ -3,14 +3,26 @@ import './App.css'
 import Header from './components/Header'
 import HeroSection from './components/HeroSection'
 import VenueCards from './components/VenueCards'
+import VenueCarousel from './components/VenueCarousel'
+import SelectVenueDropdown from './components/SelectVenueDropdown'
 
 
 function App() {
+  // Handler for dropdown selection
+  const handleVenueSelect = (uri: string) => {
+    if (uri) {
+      window.location.href = `https://www.flightclubdartsusa.com/${uri}`;
+    }
+  };
+
   return (
     <div className="bg-white min-h-screen flex flex-col font-regular">
       <Header />
       <main className="flex-1 w-full">
-        <HeroSection />
+        <VenueCarousel />
+        <div className="flex justify-center my-8">
+          <SelectVenueDropdown onSelect={handleVenueSelect} />
+        </div>
         <section className="w-full max-w-3xl mx-auto px-4 py-10 text-center">
           <h2 className="text-brandGreen text-2xl md:text-3xl font-black mb-4 tracking-wide">LET THE GAMES BEGIN — WELCOME TO FLIGHT CLUB.</h2>
           <p className="text-gray-700 text-base md:text-lg font-regular mb-2">
