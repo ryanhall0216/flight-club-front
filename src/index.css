@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'Brandon Grotesque Black';
+  src: url('/font/brandon-grotesque-black.woff') format('woff'),
+       url('/font/brandon-grotesque-black.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Grotesque Bold';
+  src: url('/font/brandon-grotesque-bold.woff') format('woff'),
+       url('/font/brandon-grotesque-bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandon Grotesque Regular';
+  src: url('/font/brandon-grotesque-regular.woff') format('woff'),
+       url('/font/brandon-grotesque-regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Tailwind's base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+}
