@@ -18,8 +18,7 @@ const venues = [
 
 export default function VenueCards() {
   return (
-    <section className="w-full max-w-6xl mx-auto px-4 py-4 grid grid-cols-1 md:grid-cols-4 gap-2 font-normal">
-      {/* 1:2:1 ratio using col-span */}
+    <section className="w-full max-w-6xl mx-auto px-2 sm:px-4 py-4 grid grid-cols-1 md:grid-cols-4 gap-2 font-normal">
       {venues.map((venue, idx) => (
         <div
           key={venue.city}
@@ -32,14 +31,13 @@ export default function VenueCards() {
             <img
               src={venue.image}
               alt={venue.city}
-              className="w-full h-56 object-cover object-center"
+              className="w-full h-48 sm:h-56 object-cover object-center"
             />
           </picture>
-          {/* City name overlay at bottom, above image, transparent bg */}
           <div
             className="absolute left-0 right-0 bottom-0 px-2 py-1 flex items-center bg-black bg-opacity-80"
           >
-            <span className="text-white italic w-full text-left font-brandon_black">
+            <span className="text-white italic w-full text-left font-brandon_black text-xs sm:text-base">
               {venue.city}
             </span>
           </div>

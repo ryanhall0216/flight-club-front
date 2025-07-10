@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import Header from './components/Header'
 import HeroSection from './components/HeroSection'
@@ -14,7 +13,9 @@ function App() {
       <Header />
       <main className="flex-1 w-full">
         <VenueCarousel />
-        <SelectVenueDropdown />
+        <div className="flex justify-center w-full px-2 sm:px-0">
+          <SelectVenueDropdown />
+        </div>
         <HeroSection />
         <VenueCards />
       </main>
