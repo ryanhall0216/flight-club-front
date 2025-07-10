@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function SelectVenueDropdown() {
   const [venues, setVenues] = useState<{ title: string; uri: string }[]>([]);
@@ -31,14 +31,14 @@ export default function SelectVenueDropdown() {
       <div className="relative flex flex-col items-center w-full">
         {/* Trigger */}
         <button
-          className="flex items-center gap-2 px-12 py-3 bg-transparent text-white text-lg md:text-xl font-normal tracking-widest uppercase border-b border-white focus:outline-none select-none"
+          className="relative flex items-center gap-2 px-12 py-3 bg-transparent text-white text-lg md:text-xl font-normal tracking-widest uppercase border-b border-white focus:outline-none select-none"
           style={{ letterSpacing: "0.2em" }}
           onClick={() => setOpen(true)}
           aria-haspopup="dialog"
           aria-expanded={open}
         >
           SELECT YOUR VENUE
-          <span className="ml-2 text-2xl">&#709;</span>
+          <span className="absolute right-0 top-1/2 -translate-y-1/2 text-2xl">&#709;</span>
         </button>
         {/* Modal Dropdown */}
         {open && (

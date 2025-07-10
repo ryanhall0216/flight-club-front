@@ -6,14 +6,15 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        brandonBlack: ['Brandon Grotesque Black', 'sans-serif'],
-        bobrandonBold: ['Brandon Grotesque Bold', 'sans-serif'],
-        brandonRegular: ['Brandon Grotesque Regular', 'sans-serif'],
+        brandon_black: ['Brandon Grotesque Black', 'sans-serif'],
+        brandon_bold: ['Brandon Grotesque Bold', 'sans-serif'],
+        brandon_regular: ['Brandon Grotesque Regular', 'sans-serif'],
       },
       colors: {
         green: '#49a27c',
         red: '#EF4358',
-        brown: '#464030'
+        brown: '#464030',
+        nav_black: '#0E1915'
       },
     },
   },

@@ -1,11 +1,6 @@
 // src/components/Header.tsx
 
-import React, { useEffect, useState } from "react";
-
-// Dummy logo import (replace with your actual logo file or use <img src="/images/logo.png" />)
-const Logo = () => (
-  <span className="font-black text-xl tracking-wider text-white font-black">FLIGHT CLUB</span>
-);
+import { useState } from "react";
 
 const navLinks = [
   { label: "BRUNCH", href: "#" },
@@ -15,30 +10,10 @@ const navLinks = [
 ];
 
 export default function Header() {
-  const [venues, setVenues] = useState<{ title: string; uri: string }[]>([]);
-  const [loading, setLoading] = useState(true);
   const [locations, setLocations] = useState(false);
   
-  useEffect(() => {
-    fetch("https://www.flightclubdartsusa.com/api/collections/venues/entries")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data && data.entries) {
-          setVenues(data.entries.map((v: any) => ({ title: v.title, uri: v.uri })));
-        }
-        setLoading(false);
-      });
-  }, []);
-
-  const handleVenueChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const uri = e.target.value;
-    if (uri && uri !== "Location") {
-      window.location.href = `https://www.flightclubdartsusa.com/${uri}`;
-    }
-  };
-
   return (
-    <header className="bg-black px-4 md:px-12 py-3 flex items-center justify-between max-w-full sticky top-0 z-50 shadow font-normal">
+    <header className="bg-nav_black px-4 md:px-12 py-3 flex items-center justify-between max-w-full sticky top-0 z-50 shadow font-normal">
         <div className="px-4 py-3 hidden lg:flex">
           <a className="block" href="#">
             <img src="/images/logo-white.png" className="block h-8" />
@@ -53,11 +28,11 @@ export default function Header() {
               onMouseEnter={() => setLocations(true)}
               onMouseLeave={() => setLocations(false)}
             >
-              <span className="flex-shrink-0">
+              <span className="flex-shrink-0 italic">
                 locations&nbsp;
               </span>
               <span
-                className="inline-block align-middle relative w-4 h-4"
+                className="flex align-end relative w-4 h-4"
                 onMouseEnter={() => setLocations(true)}
                 onMouseLeave={() => setLocations(false)}
               >
@@ -83,7 +58,7 @@ export default function Header() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-white hover:text-red capitalize text-[1.125rem] font-brandonRegular"
+                className="text-white hover:text-red capitalize text-[1.125rem]"
               >
                 {link.label}
               </a>

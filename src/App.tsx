@@ -10,7 +10,7 @@ import SelectVenueDropdown from './components/SelectVenueDropdown'
 function App() {
 
   return (
-    <div className="bg-white min-h-screen flex flex-col font-normal">
+    <div className="bg-white min-h-screen flex flex-col font-brandon_regular">
       <Header />
       <main className="flex-1 w-full">
         <VenueCarousel />
