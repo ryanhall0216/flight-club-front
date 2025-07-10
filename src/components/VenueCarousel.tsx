@@ -40,14 +40,14 @@ export default function VenueCarousel() {
       </Slider>
       <button
         onClick={() => sliderRef.current?.slickPrev()}
-        className="hidden sm:flex text-white absolute top-1/2 left-2 md:left-8 -translate-y-1/2 text-3xl md:text-5xl z-10 bg-black bg-opacity-40 rounded-full p-2 hover:bg-opacity-70 transition"
+        className="hidden sm:flex text-white absolute top-1/2 left-2 md:left-8 -translate-y-1/2 text-3xl md:text-5xl z-10 p-2 hover:bg-opacity-70 transition"
         aria-label="Previous"
       >
         <span>&lt;</span>
       </button>
       <button
         onClick={() => sliderRef.current?.slickNext()}
-        className="hidden sm:flex text-white absolute top-1/2 right-2 md:right-8 -translate-y-1/2 text-3xl md:text-5xl z-10 bg-black bg-opacity-40 rounded-full p-2 hover:bg-opacity-70 transition"
+        className="hidden sm:flex text-white absolute top-1/2 right-2 md:right-8 -translate-y-1/2 text-3xl md:text-5xl z-10 p-2 hover:bg-opacity-70 transition"
         aria-label="Next"
       >
         <span>&gt;</span>
